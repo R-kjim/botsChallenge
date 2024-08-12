@@ -44,7 +44,7 @@ function BotCard({ bot,outerDiv }) {
     //function to delete an item from the database and also from the bot list and bot army
     function deleteBotFn(){
       console.log('data')
-      fetch(`http://localhost:8002/bots/${bot.id}`,{
+      fetch(`https://database-orcin.vercel.app/bots/${bot.id}`,{
         method:"DELETE",
         headers:{
           "Content-Type":"application/json"

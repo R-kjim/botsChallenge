@@ -14,7 +14,7 @@ function BotsPage() {
   const value={botArmy,handleBotArmy,selectedBot,handleSelectedBot,showSpecs,handleShowSpecs,bots,handleBots}
   //start here with your code for step one
 useEffect(()=>{
-  fetch("http://localhost:8002/bots")
+  fetch("https://database-orcin.vercel.app/bots")
   .then(res=>res.json())
   .then(data=>handleBots(data))
 },[])
@@ -22,7 +22,7 @@ useEffect(()=>{
 function deleteBot(bot){
   let botIndex1=bots.indexOf(bot)
   let botIndex2=botArmy.indexOf(bot)
-  fetch(`http://localhost:8002/bots/${bot.id}`,{
+  fetch(`https://database-orcin.vercel.app/bots/${bot.id}`,{
     method:"DELETE",
     headers:{
       'content-type':'application/json'
